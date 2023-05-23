@@ -32,3 +32,13 @@ local.properties
 *.DS_Store
 .MWebMetaData/
 #customerRule
+
+build-cache-1/
+build/generated
+build/intermediates
+build/kotlin
+build/tmp
+
+src/
+*.gradle
+*.pro

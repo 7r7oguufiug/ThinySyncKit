@@ -1,5 +1,6 @@
 #!/bin/sh
 launchActivtiy=$1
+rm -rf ./app/build/intermediates/apk
 find . -name "*.apk" | while read fname; do
   echo $fname
 #  -r : 覆盖原来安装的 APK 并保留数据
