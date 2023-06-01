@@ -46,6 +46,11 @@
                     icon="/icons/btn_run.svg">
                 <keyboard-shortcut first-keystroke="alt shift 1" keymap="$default"/>
             </action>
+            <action id="SyncKit.CIBuildProjectAnAction" class="com.hi.dhl.action.PublishProjectAnAction"
+                    text="Publish Project In Service"
+                    icon="/icons/btn_run.svg">
+                <keyboard-shortcut first-keystroke="alt shift 7" keymap="$default"/>
+            </action>
 
             <action id="SyncKit.StopBuildAnAction" class="com.hi.dhl.action.StopBuildAnAction"
                     text="Stop Build In Service"

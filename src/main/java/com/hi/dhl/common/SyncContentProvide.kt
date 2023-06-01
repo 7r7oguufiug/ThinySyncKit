@@ -2,7 +2,7 @@ package com.hi.dhl.common
 
 import com.hi.dhl.console.RemoteMachineInfo
 import com.hi.dhl.console.SyncRunnerConsole
-import com.hi.dhl.ktkit.common.toJson
+import com.hi.dhl.ext.toJson
 import com.hi.dhl.utils.FileUtils
 import com.intellij.openapi.project.Project
 import java.io.File

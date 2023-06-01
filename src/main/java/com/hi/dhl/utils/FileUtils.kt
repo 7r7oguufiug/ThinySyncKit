@@ -2,7 +2,7 @@ package com.hi.dhl.utils
 
 import com.hi.dhl.common.Common
 import com.hi.dhl.console.RemoteMachineInfo
-import com.hi.dhl.ktkit.common.fromJson
+import com.hi.dhl.ext.fromJson
 import com.hi.dhl.utils.LogUtils.logE
 import com.hi.dhl.utils.LogUtils.logI
 import com.intellij.notification.NotificationDisplayType

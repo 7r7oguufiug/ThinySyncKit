@@ -1,7 +1,7 @@
 @file:OptIn(ExperimentalContracts::class)
 @file:Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 
-package com.hi.dhl.ktkit.common
+package com.hi.dhl.ext
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -33,7 +33,7 @@ inline fun <reified T : Any> Gson.fromJson(json: String): T =
  * output: {"name":"dhl"}
  */
 @kotlin.internal.InlineOnly
-inline fun Any.toJson(): String = GsonBuilder().create().typedToJson(this)
+inline fun Any.toJson(): String = GsonBuilder().setPrettyPrinting().create().typedToJson(this)
 
 /**
  * 生成包含 null 值的 JSON 串
@@ -49,6 +49,7 @@ inline fun Any.toJson(): String = GsonBuilder().create().typedToJson(this)
 @kotlin.internal.InlineOnly
 inline fun Any.toJson(serializeNulls: Boolean): String =
     GsonBuilder()
+        .setPrettyPrinting()
         .serializeNulls()
         .create()
         .typedToJson(this)

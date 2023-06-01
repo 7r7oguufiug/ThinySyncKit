@@ -42,6 +42,8 @@ object R {
             @JvmField
             val labelRemoteCommand = getMessage("sync.ui.lable.remote.command")
             @JvmField
+            val labelPublishCommand = getMessage("sync.ui.lable.remote.command.publish")
+            @JvmField
             val labelLaunchActivity = getMessage("sync.ui.android.lable.launch.activity")
             @JvmField
             val tfLaunchActivity = getMessage("sync.ui.android.tf.launch.activity")
@@ -60,6 +62,7 @@ object R {
 
             val actionPlugin = getMessage("sync.action.plugin")
             val actionBuildProject = getMessage("sync.action.build.project")
+            val actionPublishProject = getMessage("sync.action.publish.project")
             val actionStopBuildProject = getMessage("sync.action.stop.build.project")
             val actionCleanProject = getMessage("sync.action.clean.project")
             val actionRemoteCommand = getMessage("sync.action.remote.command")
@@ -95,6 +98,8 @@ object R {
         val installAndroidNDK = "install_android_ndk.sh"
         @JvmField
         val cleanProject = "clean-project.sh"
+        @JvmField
+        val notifyBuildResult = "notify_build_result.sh"
         @JvmField
         val installSshpass = "install-sshpass.sh"
         @JvmField

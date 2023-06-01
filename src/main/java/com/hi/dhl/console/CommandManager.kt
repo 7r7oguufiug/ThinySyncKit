@@ -48,6 +48,33 @@ object CommandManager {
         return build
     }
 
+    fun publishAndroid(build: StringBuilder,
+                       extraCommand: String,
+                       projectBasePath: String,
+                       remoteMachineInfo: RemoteMachineInfo
+    ): StringBuilder {
+        val projectName = projectBasePath.substring(projectBasePath.lastIndexOf(File.separator) + 1)
+        val remoteProjectPath = remoteMachineInfo.remoteRootDir + File.separator + projectName + File.separator
+        // 同步文件到远程
+        syncLocalToRemote(build, remoteProjectPath, projectBasePath, remoteMachineInfo)
+        build.append(" && ")
+        // 执行编译命令
+        execRemoteCommand(build, projectBasePath, remoteProjectPath, extraCommand, remoteMachineInfo)
+        //执行 notify 命令
+        val shellPath = FileUtils.getShellScriptPath(projectBasePath, R.ShellScript.notifyBuildResult)
+        if (FileUtils.isExists(shellPath)) {
+            build.append(" && ")
+
+            val remoteScriptDirPath = remoteProjectPath + File.separator + Common.syncConfigRootDir + File.separator + Common.syncConfigScriptDir
+            val fileName = R.ShellScript.notifyBuildResult
+            val remoteScriptPath = remoteScriptDirPath + File.separator + fileName
+            val exePath = ExecutableUtils.findExecutableInServiceOnPath()
+            val execShellScript = "chmod 777 $remoteScriptPath && $exePath $remoteScriptPath "
+            execRemoteCommand(build, projectBasePath, remoteProjectPath, execShellScript, remoteMachineInfo)
+        }
+        return build
+    }
+
     fun syncLocalToRemote(build: StringBuilder,
                           remoteMachineWorkPath: String,
                           localProjectBasePath: String,

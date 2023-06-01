@@ -40,6 +40,8 @@ public class PluginConfigForm {
     JCheckBox cbGradlew;
     JTextField tfRemotePassword;
     JLabel labelRemotePassword;
+    JLabel labelPublishCommand;
+    JTextField tfRemotePublishCommand;
 
     PluginConfigForm() {
         rootPanel.setPreferredSize(new Dimension(460, -1));
@@ -47,6 +49,7 @@ public class PluginConfigForm {
         labelRemotePort.setText(R.String.ui.labelRemotePort);
         labelRemoteHost.setText(R.String.ui.labelRemoteHost);
         labelRemoteCommand.setText(R.String.ui.labelRemoteCommand);
+        labelPublishCommand.setText(R.String.ui.labelPublishCommand);
 
         labelLaunchActivity.setText(R.String.ui.labelLaunchActivity);
         tfLaunchActivity.addFocusListener(new JTextFieldHintListener(tfLaunchActivity, R.String.ui.tfLaunchActivity));

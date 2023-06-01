@@ -16,6 +16,7 @@ data class RemoteMachineInfo(
     var remoteHost: String,
     var remoteUser: String,
     var remoteBuildCommand: String? = null,
+    var remotePublishCommand: String? = null,
     var remoteRootDir: String = Common.remoteRootDir,
     var launchActivity: String? = null,
     var sdkDir: String? = null,
